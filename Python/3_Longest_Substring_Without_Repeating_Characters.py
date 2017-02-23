@@ -6,16 +6,28 @@ class Solution(object):
         """
         list1=[]
         list2=[]
-        for i in range(len(s)):
-            list2.append(0)
-            list1=[]
+        i=0
+        count=0
+        if not len(s):
+            return 0
+        while 1:
+            if i >= len(s):
+                break
+            list2.append(count)
             for ii in s[i:]:
+                i=i+1
+                print list2,"|",list1,count
                 if ii not in list1:
                     list1.append(ii)
-                    list2[i]+=1
+                    list2[len(list2)-1]+=1
+                    #print list2,"|",list1
                 else:
+                    count = len(list1)-list1.index(ii)
+                    temp = ii
+                    list1=list(s[i-count:i])
+                    #print "after",list1
                     break
-        print list2
+        #print list1
         return max(list2)
 
 
