@@ -1,0 +1,19 @@
+dict中判断一个key是否在其中可以仿照list用in，那么如何判断一个dict是否为空呢？
+>>> d
+{}
+>>> if d:
+...     print "yes"
+... else:
+...     print "no"
+...
+no
+>>> d['a']=1
+>>> d
+{'a': 1}
+>>> if d:
+...     print "yes"
+... else:
+...     print "no"
+...
+yes
+>>>
