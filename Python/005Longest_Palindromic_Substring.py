@@ -1,8 +1,8 @@
 #coding=utf8
 class Solution(object):
     def longestPalindrome(self,s):
-        dicts=[]
-        dicta=[]
+        dicts=[]#record the place
+        dicta=[]#record the different char
         maxs=''
         for i in range(len(s)):
             if s[i] not in dicta:
