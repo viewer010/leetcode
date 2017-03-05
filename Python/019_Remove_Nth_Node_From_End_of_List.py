@@ -11,6 +11,37 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
+        count=0
+        i=0
+        temp=head
+        while temp:
+            count+=1
+            temp=temp.next
+        temp=head
+        if n==count:
+            temp=head
+            head=head.next
+            temp.next=None
+            del temp
+            return head
+        while temp:
+            if i+1==count-n:
+                temps=temp.next
+                temp.next=temp.next.next
+                del temps
+                break
+            i=i+1
+            temp=temp.next
+        return head
+
+
+    '''
+    def removeNthFromEnd(self, head, n):
+        """
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
+        """
         heads=self.reverse(head)
         if n==1:
             heads=heads.next
@@ -29,7 +60,6 @@ class Solution(object):
             heads=temp
         return self.reverse(heads)
 
-
     def reverse(self,head):
         
         if head:
@@ -43,6 +73,7 @@ class Solution(object):
             heads=temp
             head=head.next
         return heads
+    '''
     def add(self,head,value):
         while head.next:
             head=head.next
@@ -54,15 +85,16 @@ class Solution(object):
             print head.val,
             head=head.next
         print 
+
 if __name__ == '__main__':
     example = Solution()
     head = ListNode(1)
-    example.add(head,2)
-    example.add(head,3)
-    example.add(head,4)
-    example.add(head,5)
+    # example.add(head,2)
+    # example.add(head,3)
+    # example.add(head,4)
+    # example.add(head,5)
     example.display(head)
     # heads=example.reverse(head)
     # example.display(heads)
-    heads=example.removeNthFromEnd(head,2)
+    heads=example.removeNthFromEnd(head,1)
     example.display(heads)
