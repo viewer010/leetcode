@@ -17,7 +17,7 @@ class Solution(object):
                 elif s>0:
                     r=r-1
                 else:
-                    ret.append(nums[i],nums[l],nums[r])
+                    ret.append([nums[i],nums[l],nums[r]])
                     while l<r and nums[l]==nums[l+1]:
                         l+=1
                     while l<r and nums[r]==nums[r-1]:
@@ -70,9 +70,9 @@ class Solution(object):
         '''
 if __name__ == '__main__':
     example = Solution()
-    #nums=[-1,0,1,2,-1,-4]
+    nums=[-1,0,1,2,-1,-4]
     #nums=[-1,-2,-3,4,1,3,0,3,-2,1,-2,2,-1,1,-5,4,-3]
-    nums=[1,2,-2,-1]
+    #nums=[1,2,-2,-1]
     print nums
     print example.threeSum(nums)
 
