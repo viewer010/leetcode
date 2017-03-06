@@ -24,26 +24,9 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        l11,l22=None,None
-        if not l1 or not l2:
-            if not l1 and l2:
-                temp=l2.val
-                l22=l2.next
-            elif l1 and not l2:
-                temp=l1.val
-                l11=l1.next
-            else:
-                return None
-        elif l1.val<l2.val:
-            temp = l1.val
-            l11=l1.next
-            l22=l2
-        else:
-            temp = l2.val
-            l11=l1
-            l22=l2.next
-        head = ListNode(temp)
+        head = ListNode(0)
         index=head
+        l11,l22=l1,l2
         while True:
             if l11 and l22:
                 print l11.val,l22.val
@@ -67,7 +50,7 @@ class Solution(object):
             index.next=temp
             index=temp
             l22=l22.next
-        return head
+        return head.next
         
     def display(self,head):
         index=head
