@@ -18,7 +18,7 @@ class Solution(object):
 #         self.next = None
 
 class Solution(object):
-    def mergeTwoLists(self, l1, l2):
+    def mergeTwoLists(self, l11, l22):
         """
         :type l1: ListNode
         :type l2: ListNode
@@ -26,7 +26,7 @@ class Solution(object):
         """
         head = ListNode(0)
         index=head
-        l11,l22=l1,l2
+        # l11,l22=l1,l2
         while True:
             if l11 and l22:
                 print l11.val,l22.val
@@ -80,6 +80,7 @@ if __name__ == '__main__':
 
     head3 = example.mergeTwoLists(head,head1)
     print example.display(head3)
+    print example.display(head)
     # heads=example.reverse(head)
     # example.display(heads)
 
